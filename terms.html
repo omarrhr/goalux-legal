@@ -20,85 +20,35 @@
 
   <section class="doc" id="es">
     <h2>Español</h2>
-    <pre>TÉRMINOS Y CONDICIONES DE USO — GoalUX v1.0
-Vigentes desde el 30 de mayo de 2026.
-
-1. ACEPTACIÓN
-Al usar GoalUX aceptas íntegramente estos Términos. Si no estás de acuerdo, desinstala la app.
-
-2. SERVICIO
-GoalUX permite registrar, consultar y compartir resultados de partidos de fútbol. El desarrollador puede modificar o discontinuar funciones en cualquier momento.
-
-3. REGISTRO
-Requiere cuenta de Google activa. Eres responsable de la seguridad de tus credenciales.
-
-4. USO PERMITIDO
-Queda prohibido: usar la app para fines ilegales, realizar ingeniería inversa, suplantar identidades o transmitir código malicioso.
-
-5. PROPIEDAD INTELECTUAL
-Todos los derechos sobre la app pertenecen al desarrollador. Se te otorga una licencia personal, no exclusiva y revocable para uso estrictamente personal.
-
-6. MENORES
-Menores de 18 años solo pueden usar la app con consentimiento de su tutor legal. No recopilamos datos de menores de 13 años sin consentimiento parental verificable (COPPA).
-
-7. RESPONSABILIDAD
-La app se ofrece "tal cual". El desarrollador no responde por pérdida de datos ni daños derivados del uso.
-
-8. PAGOS
-La versión actual es gratuita. Cualquier funcionalidad de pago futura será anunciada con al menos 15 días de anticipación.
-
-9. LEY APLICABLE
-Ley peruana. Jurisdicción: Lima, Perú.
-
-10. IDIOMA PREVALECIENTE
-Este documento puede ofrecerse traducido a otros idiomas por conveniencia. Ante cualquier discrepancia o imprecisión entre versiones, prevalece la versión en español.
-
-11. CONTACTO
-omarhr.dev@gmail.com</pre>
+    <pre id="body-es">Cargando…</pre>
   </section>
 
   <section class="doc" id="en">
     <h2>English</h2>
-    <pre>TERMS AND CONDITIONS OF USE — GoalUX v1.0
-Effective as of May 30, 2026.
-
-1. ACCEPTANCE
-By using GoalUX you fully accept these Terms. If you do not agree, uninstall the app.
-
-2. SERVICE
-GoalUX lets you record, review and share football match results. The developer may modify or discontinue features at any time.
-
-3. REGISTRATION
-An active Google account is required. You are responsible for the security of your credentials.
-
-4. PERMITTED USE
-The following is prohibited: using the app for illegal purposes, reverse engineering, impersonating others, or transmitting malicious code.
-
-5. INTELLECTUAL PROPERTY
-All rights to the app belong to the developer. You are granted a personal, non-exclusive, revocable license for strictly personal use.
-
-6. MINORS
-Users under 18 may only use the app with the consent of their legal guardian. We do not collect data from children under 13 without verifiable parental consent (COPPA).
-
-7. LIABILITY
-The app is provided "as is". The developer is not liable for data loss or damages arising from its use.
-
-8. PAYMENTS
-The current version is free. Any future paid features will be announced at least 15 days in advance.
-
-9. GOVERNING LAW
-Peruvian law. Jurisdiction: Lima, Peru.
-
-10. PREVAILING LANGUAGE
-This document is a translation provided for convenience. In case of any discrepancy or inaccuracy between versions, the Spanish version shall prevail.
-
-11. CONTACT
-omarhr.dev@gmail.com</pre>
+    <pre id="body-en">Loading…</pre>
   </section>
 
   <footer>
     <a href="index.html">← GoalUX</a> · <a href="privacy.html">Política de Privacidad</a>
   </footer>
 </div>
+<script>
+  // Fuente única: este HTML solo muestra lo que ya vive en terms_es.txt /
+  // terms_en.txt. Editar el texto legal significa editar SOLO esos .txt
+  // (los mismos que consume la app) — esta página se actualiza sola.
+  function loadDoc(file, elementId) {
+    fetch(file, { cache: 'no-store' })
+      .then(function (r) { return r.text(); })
+      .then(function (text) {
+        document.getElementById(elementId).textContent = text;
+      })
+      .catch(function () {
+        document.getElementById(elementId).textContent =
+          'No se pudo cargar el documento. Intenta recargar la página.';
+      });
+  }
+  loadDoc('terms_es.txt', 'body-es');
+  loadDoc('terms_en.txt', 'body-en');
+</script>
 </body>
 </html>

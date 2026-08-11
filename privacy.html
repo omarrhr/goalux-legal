@@ -20,91 +20,35 @@
 
   <section class="doc" id="es">
     <h2>Español</h2>
-    <pre>POLÍTICA DE PRIVACIDAD — GoalUX v1.0
-Vigente desde el 30 de mayo de 2026.
-Responsable: Omar Rodrigo — omarhr.dev@gmail.com — Perú.
-
-MARCO LEGAL
-Ley 29733 (Perú), RGPD (UE) y COPPA (EE.UU.).
-
-DATOS QUE RECOPILAMOS
-• Cuenta Google: nombre y correo electrónico (solo para autenticación).
-• Datos de partidos: marcadores, equipos, fechas y tiempos que registras.
-• Preferencias de configuración.
-
-Versión actual: todos los datos se almacenan localmente en tu dispositivo. No se envían a servidores externos, salvo el proceso de login gestionado por Google.
-
-CÓMO USAMOS TUS DATOS
-• Mostrarte tu historial y estadísticas.
-• Sincronización entre dispositivos (próximamente).
-No usamos tus datos para publicidad ni los vendemos a terceros.
-
-TERCEROS
-Google LLC gestiona la autenticación bajo su propia política de privacidad (policies.google.com/privacy). Cuando compartes un resultado, el contenido lo recibe la app que tú elijas.
-
-MENORES
-No recopilamos datos de menores de 13 años sin consentimiento parental. Padres/tutores pueden solicitar la eliminación escribiendo a omarhr.dev@gmail.com.
-
-TUS DERECHOS (ARCO / GDPR)
-Acceso · Rectificación · Cancelación · Oposición · Portabilidad.
-Ejércelos desde: Configuración → Cuenta → Eliminar mis datos, o en omarhr.dev@gmail.com.
-
-RETENCIÓN
-Los datos se eliminan al desinstalar la app o al usar "Eliminar mis datos".
-
-AUTORIDADES DE CONTROL
-Perú: Ministerio de Justicia (minjus.gob.pe).
-UE: autoridad de tu país de residencia.
-
-IDIOMA PREVALECIENTE
-Este documento puede ofrecerse traducido a otros idiomas por conveniencia. Ante cualquier discrepancia o imprecisión entre versiones, prevalece la versión en español.</pre>
+    <pre id="body-es">Cargando…</pre>
   </section>
 
   <section class="doc" id="en">
     <h2>English</h2>
-    <pre>PRIVACY POLICY — GoalUX v1.0
-Effective as of May 30, 2026.
-Controller: Omar Rodrigo — omarhr.dev@gmail.com — Peru.
-
-LEGAL FRAMEWORK
-Law 29733 (Peru), GDPR (EU) and COPPA (USA).
-
-DATA WE COLLECT
-• Google account: name and email address (authentication only).
-• Match data: scores, teams, dates and times you record.
-• Configuration preferences.
-
-Current version: all data is stored locally on your device. It is not sent to external servers, except for the login process managed by Google.
-
-HOW WE USE YOUR DATA
-• To show you your history and statistics.
-• Synchronization across devices (coming soon).
-We do not use your data for advertising, nor do we sell it to third parties.
-
-THIRD PARTIES
-Google LLC manages authentication under its own privacy policy (policies.google.com/privacy). When you share a result, the content is received by the app you choose.
-
-MINORS
-We do not collect data from children under 13 without parental consent. Parents/guardians may request deletion by writing to omarhr.dev@gmail.com.
-
-YOUR RIGHTS (ARCO / GDPR)
-Access · Rectification · Erasure · Objection · Portability.
-Exercise them from: Settings → Account → Delete my data, or at omarhr.dev@gmail.com.
-
-RETENTION
-Data is deleted when you uninstall the app or use "Delete my data".
-
-SUPERVISORY AUTHORITIES
-Peru: Ministry of Justice (minjus.gob.pe).
-EU: the authority of your country of residence.
-
-PREVAILING LANGUAGE
-This document is a translation provided for convenience. In case of any discrepancy or inaccuracy between versions, the Spanish version shall prevail.</pre>
+    <pre id="body-en">Loading…</pre>
   </section>
 
   <footer>
     <a href="index.html">← GoalUX</a> · <a href="terms.html">Términos y Condiciones</a>
   </footer>
 </div>
+<script>
+  // Fuente única: este HTML solo muestra lo que ya vive en privacy_es.txt /
+  // privacy_en.txt. Editar el texto legal significa editar SOLO esos .txt
+  // (los mismos que consume la app) — esta página se actualiza sola.
+  function loadDoc(file, elementId) {
+    fetch(file, { cache: 'no-store' })
+      .then(function (r) { return r.text(); })
+      .then(function (text) {
+        document.getElementById(elementId).textContent = text;
+      })
+      .catch(function () {
+        document.getElementById(elementId).textContent =
+          'No se pudo cargar el documento. Intenta recargar la página.';
+      });
+  }
+  loadDoc('privacy_es.txt', 'body-es');
+  loadDoc('privacy_en.txt', 'body-en');
+</script>
 </body>
 </html>
