@@ -1,0 +1,35 @@
+TERMS AND CONDITIONS OF USE — GoalUX v1.0
+Effective as of May 30, 2026.
+
+1. ACCEPTANCE
+By using GoalUX you fully accept these Terms. If you do not agree, uninstall the app.
+
+2. SERVICE
+GoalUX lets you record, review and share football match results. The developer may modify or discontinue features at any time.
+
+3. REGISTRATION
+An active Google account is required. You are responsible for the security of your credentials.
+
+4. PERMITTED USE
+The following is prohibited: using the app for illegal purposes, reverse engineering, impersonating others, or transmitting malicious code.
+
+5. INTELLECTUAL PROPERTY
+All rights to the app belong to the developer. You are granted a personal, non-exclusive, revocable license for strictly personal use.
+
+6. MINORS
+Users under 18 may only use the app with the consent of their legal guardian. We do not collect data from children under 13 without verifiable parental consent (COPPA).
+
+7. LIABILITY
+The app is provided "as is". The developer is not liable for data loss or damages arising from its use.
+
+8. PAYMENTS
+The current version is free. Any future paid features will be announced at least 15 days in advance.
+
+9. GOVERNING LAW
+Peruvian law. Jurisdiction: Lima, Peru.
+
+10. PREVAILING LANGUAGE
+This document is a translation provided for convenience. In case of any discrepancy or inaccuracy between versions, the Spanish version shall prevail.
+
+11. CONTACT
+omarhr.dev@gmail.com

@@ -1,0 +1,38 @@
+POLÍTICA DE PRIVACIDAD — GoalUX v1.0
+Vigente desde el 30 de mayo de 2026.
+Responsable: Omar Rodrigo — omarhr.dev@gmail.com — Perú.
+
+MARCO LEGAL
+Ley 29733 (Perú), RGPD (UE) y COPPA (EE.UU.).
+
+DATOS QUE RECOPILAMOS
+• Cuenta Google: nombre y correo electrónico (solo para autenticación).
+• Datos de partidos: marcadores, equipos, fechas y tiempos que registras.
+• Preferencias de configuración.
+
+Versión actual: todos los datos se almacenan localmente en tu dispositivo. No se envían a servidores externos, salvo el proceso de login gestionado por Google.
+
+CÓMO USAMOS TUS DATOS
+• Mostrarte tu historial y estadísticas.
+• Sincronización entre dispositivos (próximamente).
+No usamos tus datos para publicidad ni los vendemos a terceros.
+
+TERCEROS
+Google LLC gestiona la autenticación bajo su propia política de privacidad (policies.google.com/privacy). Cuando compartes un resultado, el contenido lo recibe la app que tú elijas.
+
+MENORES
+No recopilamos datos de menores de 13 años sin consentimiento parental. Padres/tutores pueden solicitar la eliminación escribiendo a omarhr.dev@gmail.com.
+
+TUS DERECHOS (ARCO / GDPR)
+Acceso · Rectificación · Cancelación · Oposición · Portabilidad.
+Ejércelos desde: Configuración → Cuenta → Eliminar mis datos, o en omarhr.dev@gmail.com.
+
+RETENCIÓN
+Los datos se eliminan al desinstalar la app o al usar "Eliminar mis datos".
+
+AUTORIDADES DE CONTROL
+Perú: Ministerio de Justicia (minjus.gob.pe).
+UE: autoridad de tu país de residencia.
+
+IDIOMA PREVALECIENTE
+Este documento puede ofrecerse traducido a otros idiomas por conveniencia. Ante cualquier discrepancia o imprecisión entre versiones, prevalece la versión en español.
