@@ -21,6 +21,7 @@
     --border: #2a2a2e;
     --green: #5fe3a1;
     --blue: #4da3ff;
+    --red: #ff4d57;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -63,28 +64,31 @@
   }
 
   /* Urgencia: indicador "en vivo" bajo el botón y franja antes de los pasos. */
+  /* Alarma roja: punto que late y parpadea. */
   .live {
-    display: inline-flex; align-items: center; gap: 8px;
-    margin-top: 14px; font-size: 13px; color: var(--muted);
+    display: inline-flex; align-items: center; gap: 9px;
+    margin-top: 16px; padding: 6px 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; color: var(--red);
+    background: rgba(255, 77, 87, .10); border: 1px solid rgba(255, 77, 87, .45);
   }
   .live .dot {
-    width: 8px; height: 8px; border-radius: 50%; background: var(--green);
-    box-shadow: 0 0 0 0 rgba(95, 227, 161, .6);
-    animation: pulse 1.8s infinite;
+    width: 9px; height: 9px; border-radius: 50%; background: var(--red);
+    animation: pulse 1.4s infinite, blink 1.4s infinite;
   }
   @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(95, 227, 161, .55); }
-    70% { box-shadow: 0 0 0 9px rgba(95, 227, 161, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(95, 227, 161, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(255, 77, 87, .7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 77, 87, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 77, 87, 0); }
   }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
   @media (prefers-reduced-motion: reduce) { .live .dot { animation: none; } }
   .closing {
     margin: 28px 0 0; padding: 16px 18px; border-radius: 14px;
-    background: linear-gradient(135deg, rgba(95, 227, 161, .14), rgba(77, 163, 255, .10));
-    border: 1px solid rgba(95, 227, 161, .35);
+    background: linear-gradient(135deg, rgba(255, 77, 87, .22), rgba(255, 77, 87, .08));
+    border: 1px solid rgba(255, 77, 87, .55);
   }
-  .closing b { display: block; font-size: 17px; margin-bottom: 4px; }
-  .closing span { color: var(--muted); font-size: 15px; }
+  .closing b { display: block; font-size: 17px; margin-bottom: 4px; color: #ffd9db; }
+  .closing span { color: #e7b9bc; font-size: 15px; }
 
   .share { margin-top: 16px; text-align: center; }
   .share p { color: var(--muted); font-size: 15px; margin: 0 0 10px; }
@@ -176,7 +180,7 @@
 
   <header class="hero">
     <img class="icon" src="img/goalux_icon.png" alt="GoalUX">
-    <div><span class="pill" data-i18n="pill">Acceso anticipado · gratis · cierra pronto</span></div>
+    <div><span class="pill" data-i18n="pill">Acceso anticipado · gratis</span></div>
     <h1 data-i18n="title">Tus partidos de fútbol,<br>desde el reloj ⚽⌚</h1>
     <p data-i18n="lead">Marcador, goles, cronómetro y estadísticas sin sacar el celular.
       GoalUX está en acceso anticipado: pruébala gratis antes del lanzamiento.</p>
@@ -284,7 +288,7 @@
   var T = {
     es: {
       docTitle: 'Prueba GoalUX gratis',
-      pill: 'Acceso anticipado · gratis · cierra pronto',
+      pill: 'Acceso anticipado · gratis',
       title: 'Tus partidos de fútbol,<br>desde el reloj ⚽⌚',
       lead: 'Marcador, goles, cronómetro y estadísticas sin sacar el celular. GoalUX está en acceso anticipado: pruébala gratis antes del lanzamiento.',
       cta: 'Quiero probarla',
@@ -332,7 +336,7 @@
     },
     en: {
       docTitle: 'Try GoalUX for free',
-      pill: 'Early access · free · closing soon',
+      pill: 'Early access · free',
       title: 'Your football matches,<br>from your watch ⚽⌚',
       lead: 'Score, goals, match timer and stats without taking out your phone. GoalUX is in early access: try it for free before launch.',
       cta: 'I want to try it',
