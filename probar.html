@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prueba GoalUX gratis</title>
+<meta name="description" content="Registra tus partidos de fútbol desde el reloj: marcador, goles, cronómetro y estadísticas. Pruébala gratis antes del lanzamiento.">
+<meta property="og:title" content="Prueba GoalUX gratis ⚽⌚">
+<meta property="og:description" content="Tus partidos, goles y estadísticas desde el reloj. Acceso anticipado gratis.">
+<meta property="og:image" content="https://omarrhr.github.io/goalux-legal/img/goalux_banner.png">
+<meta property="og:url" content="https://omarrhr.github.io/goalux-legal/probar.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/goalux_icon.png">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0b0b0c;
+    --fg: #ececee;
+    --muted: #9a9aa2;
+    --card: #16161a;
+    --border: #2a2a2e;
+    --green: #5fe3a1;
+    --blue: #4da3ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 28px 16px 64px; }
+  a { color: var(--blue); }
+
+  .hero { text-align: center; padding: 8px 0 8px; }
+  .hero img.icon { width: 72px; height: 72px; border-radius: 18px; }
+  .pill {
+    display: inline-block; margin-top: 14px; padding: 4px 12px;
+    border: 1px solid var(--green); color: var(--green);
+    border-radius: 999px; font-size: 13px; font-weight: 600;
+  }
+  .hero h1 { font-size: clamp(28px, 7vw, 40px); line-height: 1.15; margin: 14px 0 10px; }
+  .hero p { color: var(--muted); font-size: 17px; margin: 0 auto; max-width: 520px; }
+  .cta {
+    display: inline-block; margin-top: 22px; padding: 14px 26px;
+    background: var(--green); color: #06130c; font-weight: 700;
+    border-radius: 999px; text-decoration: none; font-size: 16px;
+  }
+
+  .watches {
+    display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;
+    margin: 34px 0 6px;
+  }
+  .watch {
+    width: 150px; height: 150px; border-radius: 50%;
+    border: 6px solid #2b2b31; box-shadow: 0 0 0 2px #111, 0 10px 30px rgba(0,0,0,.6);
+    overflow: hidden; background: #000;
+  }
+  .watch img { width: 100%; height: 100%; display: block; }
+
+  h2 { font-size: 20px; margin: 40px 0 14px; }
+
+  ul.features { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  ul.features li {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 14px;
+  }
+  ul.features b { color: var(--fg); }
+  ul.features span { color: var(--muted); }
+
+  .req { display: grid; gap: 10px; grid-template-columns: 1fr; }
+  @media (min-width: 560px) { .req { grid-template-columns: 1fr 1fr 1fr; } }
+  .req div {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 14px; font-size: 15px;
+  }
+  .req small { color: var(--muted); display: block; }
+
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; display: grid; gap: 12px; }
+  ol.steps li {
+    counter-increment: s; position: relative;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 16px 16px 16px 60px;
+  }
+  ol.steps li::before {
+    content: counter(s); position: absolute; left: 16px; top: 16px;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--green); color: #06130c; font-weight: 800;
+    display: grid; place-items: center;
+  }
+  ol.steps h3 { margin: 2px 0 4px; font-size: 16px; }
+  ol.steps p { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
+  .btn {
+    display: inline-block; padding: 10px 16px; border-radius: 10px;
+    border: 1px solid var(--green); color: var(--green);
+    text-decoration: none; font-weight: 600; font-size: 15px;
+  }
+
+  .note {
+    margin-top: 16px; padding: 14px 16px; border-radius: 12px;
+    background: rgba(95, 227, 161, .08); border: 1px solid rgba(95, 227, 161, .35);
+    font-size: 15px;
+  }
+  details {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 14px; margin-bottom: 10px;
+  }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { color: var(--muted); margin: 8px 0 0; font-size: 15px; }
+
+  footer { margin-top: 44px; color: var(--muted); font-size: 13px; text-align: center; }
+  footer a { color: var(--muted); }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 40px 0 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <img class="icon" src="img/goalux_icon.png" alt="GoalUX">
+    <div><span class="pill">Acceso anticipado · gratis</span></div>
+    <h1>Tus partidos de fútbol,<br>desde el reloj ⚽⌚</h1>
+    <p>Marcador, goles, cronómetro y estadísticas sin sacar el celular. Es la app
+      que uso en mis partidos, y ahora puedes probarla antes del lanzamiento.</p>
+    <a class="cta" href="#pasos">Quiero probarla</a>
+  </header>
+
+  <div class="watches" aria-label="Capturas de la app en el reloj">
+    <div class="watch"><img src="img/reloj_marcador.png" alt="Marcador con cronómetro"></div>
+    <div class="watch"><img src="img/reloj_linea_de_tiempo.png" alt="Línea de tiempo del partido"></div>
+    <div class="watch"><img src="img/reloj_estadisticas.png" alt="Estadísticas"></div>
+  </div>
+
+  <h2>Qué hace</h2>
+  <ul class="features">
+    <li><b>Marcador y tus goles</b> <span>— suma con un toque, en plena cancha.</span></li>
+    <li><b>Cronómetro del partido</b> <span>— sigue corriendo aunque se apague la pantalla o se cierre la app.</span></li>
+    <li><b>Línea de tiempo</b> <span>— goles, asistencias y jugadas con el minuto exacto.</span></li>
+    <li><b>Historial y estadísticas</b> <span>— partidos jugados, goles y % de victorias, guardados en la nube.</span></li>
+    <li><b>App de celular</b> <span>— tu cuenta y GoalUX Pro, que puedes probar gratis.</span></li>
+  </ul>
+
+  <h2>Qué necesitas</h2>
+  <div class="req">
+    <div>📱 Celular Android<small>con Google Play</small></div>
+    <div>⌚ Reloj Wear OS<small>opcional: Galaxy Watch, Pixel Watch, Xiaomi, etc.</small></div>
+    <div>🔑 Cuenta de Google<small>la misma del Play Store</small></div>
+  </div>
+
+  <h2 id="pasos">Cómo entrar (2 minutos)</h2>
+  <ol class="steps">
+    <li>
+      <h3>Únete al grupo de testers</h3>
+      <p>Con la cuenta de Google de tu Play Store. Toca "Unirse al grupo".</p>
+      <a class="btn" href="https://groups.google.com/g/goalux-testers" target="_blank" rel="noopener">Unirme al grupo</a>
+    </li>
+    <li>
+      <h3>Activa la prueba</h3>
+      <p>Toca "Convertirse en tester" (o "Become a tester").</p>
+      <a class="btn" href="https://play.google.com/apps/testing/com.goalux.app" target="_blank" rel="noopener">Activar la prueba</a>
+    </li>
+    <li>
+      <h3>Instala GoalUX</h3>
+      <p>En el celular, desde Google Play. Si tienes reloj Wear OS, búscala también
+        en el Play Store del reloj.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.goalux.app" target="_blank" rel="noopener">Abrir en Google Play</a>
+    </li>
+  </ol>
+
+  <div class="note">
+    🙏 <b>Lo único que te pido:</b> quédate en el grupo al menos <b>14 días</b>
+    y úsala en tus partidos. Si algo falla o se te ocurre una mejora, escríbeme a
+    <a href="mailto:goaluxapp@gmail.com?subject=GoalUX%20-%20feedback">goaluxapp@gmail.com</a>.
+  </div>
+
+  <h2>Preguntas</h2>
+  <details>
+    <summary>¿Cuesta algo?</summary>
+    <p>No. La app es gratis, y dentro puedes activar una prueba gratis de Pro.
+      No hace falta poner tarjeta.</p>
+  </details>
+  <details>
+    <summary>¿Necesito reloj sí o sí?</summary>
+    <p>No. Puedes probar la app del celular sin reloj. El registro del partido
+      en la cancha es la parte del reloj.</p>
+  </details>
+  <details>
+    <summary>Play dice "no disponible" o no encuentro la app</summary>
+    <p>Revisa que te uniste al grupo y activaste la prueba con la misma cuenta
+      de Google del Play Store. Si acabas de unirte, espera 10–15 minutos y
+      vuelve a intentarlo.</p>
+  </details>
+  <details>
+    <summary>¿Por qué 14 días?</summary>
+    <p>Google pide que la app se pruebe al menos 14 días antes de publicarla
+      para todos. Si sales antes, tu prueba deja de contar.</p>
+  </details>
+
+  <hr>
+  <h2>In English</h2>
+  <p style="color:var(--muted)">GoalUX tracks your football (soccer) matches from a
+    Wear OS watch: score, goals, a match timer and stats, synced to the cloud.
+    Early access is free. 1) <a href="https://groups.google.com/g/goalux-testers" target="_blank" rel="noopener">Join the testers group</a>
+    with your Play Store account, 2) <a href="https://play.google.com/apps/testing/com.goalux.app" target="_blank" rel="noopener">become a tester</a>,
+    3) install it from Google Play (phone, and the watch if you have one).
+    Please stay at least 14 days. Feedback: goaluxapp@gmail.com.</p>
+
+  <footer>
+    GoalUX ·
+    <a href="privacy.html">Privacidad</a> ·
+    <a href="terms.html">Términos</a>
+  </footer>
+</div>
+</body>
+</html>
