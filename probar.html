@@ -62,6 +62,38 @@
     cursor: pointer;
   }
 
+  /* Urgencia: indicador "en vivo" bajo el botón y franja antes de los pasos. */
+  .live {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 14px; font-size: 13px; color: var(--muted);
+  }
+  .live .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+    box-shadow: 0 0 0 0 rgba(95, 227, 161, .6);
+    animation: pulse 1.8s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(95, 227, 161, .55); }
+    70% { box-shadow: 0 0 0 9px rgba(95, 227, 161, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(95, 227, 161, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) { .live .dot { animation: none; } }
+  .closing {
+    margin: 28px 0 0; padding: 16px 18px; border-radius: 14px;
+    background: linear-gradient(135deg, rgba(95, 227, 161, .14), rgba(77, 163, 255, .10));
+    border: 1px solid rgba(95, 227, 161, .35);
+  }
+  .closing b { display: block; font-size: 17px; margin-bottom: 4px; }
+  .closing span { color: var(--muted); font-size: 15px; }
+
+  .share { margin-top: 16px; text-align: center; }
+  .share p { color: var(--muted); font-size: 15px; margin: 0 0 10px; }
+  .wa {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 20px; border-radius: 999px; text-decoration: none;
+    background: #25d366; color: #06130c; font-weight: 700; font-size: 15px;
+  }
+
   /* Capturas del reloj: mismas imágenes que la ficha de Wear OS en Google Play. */
   .shots {
     display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory;
@@ -144,11 +176,12 @@
 
   <header class="hero">
     <img class="icon" src="img/goalux_icon.png" alt="GoalUX">
-    <div><span class="pill" data-i18n="pill">Acceso anticipado · gratis</span></div>
+    <div><span class="pill" data-i18n="pill">Acceso anticipado · gratis · cierra pronto</span></div>
     <h1 data-i18n="title">Tus partidos de fútbol,<br>desde el reloj ⚽⌚</h1>
     <p data-i18n="lead">Marcador, goles, cronómetro y estadísticas sin sacar el celular.
       GoalUX está en acceso anticipado: pruébala gratis antes del lanzamiento.</p>
     <a class="cta" href="#pasos" id="cta" data-i18n="cta">Quiero probarla</a>
+    <div><span class="live"><span class="dot" aria-hidden="true"></span><span data-i18n="live">Inscripciones abiertas por poco tiempo</span></span></div>
   </header>
 
   <div class="shots" aria-label="Capturas de la app en el reloj">
@@ -159,6 +192,10 @@
     <figure><img src="img/reloj_estadisticas.png" alt="" loading="lazy"><figcaption data-i18n="cap5">Estadísticas</figcaption></figure>
   </div>
   <p class="hint" data-i18n="hint">Desliza para ver más →</p>
+
+  <div class="closing" data-i18n="closing"><b>⏳ El acceso anticipado se cierra pronto</b>
+    <span>Cuando GoalUX salga para todos, se acaban las inscripciones. Los que entren
+    ahora juegan primero y nos ayudan a darle forma.</span></div>
 
   <h2 id="pasos-titulo" data-i18n="stepsTitle">Cómo entrar (2 minutos)</h2>
   <div id="pasos">
@@ -183,6 +220,11 @@
     <div class="note" data-i18n="ask">🙏 <b>Lo único que pedimos:</b> quédate en el grupo al menos <b>30 días</b>
       y úsala en tus partidos. Si algo falla o se te ocurre una mejora, escríbenos a
       <a href="mailto:goaluxapp@gmail.com?subject=GoalUX%20-%20feedback">goaluxapp@gmail.com</a>.</div>
+
+    <div class="share">
+      <p data-i18n="shareText">⚽ El fútbol se juega en equipo. Pásale el enlace a tu pichanga antes de que cierre.</p>
+      <a class="wa" id="share" href="https://wa.me/?text=%E2%9A%BD%E2%8C%9A%20GoalUX%3A%20tus%20partidos%20de%20f%C3%BAtbol%20desde%20el%20reloj.%20Acceso%20anticipado%20gratis%2C%20cierra%20pronto%20%F0%9F%91%89%20https%3A%2F%2Fomarrhr.github.io%2Fgoalux-legal%2Fprobar.html" target="_blank" rel="noopener" data-i18n="shareBtn">Compartir por WhatsApp</a>
+    </div>
   </div>
 
   <h2 data-i18n="featTitle">Qué hace</h2>
@@ -224,6 +266,11 @@
       publicarla para todos, y solo cuenta a quienes siguen en el grupo. Si sales
       antes, tu prueba deja de contar.</p>
   </details>
+  <details>
+    <summary data-i18n="q5">¿Qué pasa cuando GoalUX salga para todos?</summary>
+    <p data-i18n="a5">Sigues con la app instalada y te llegan las actualizaciones desde
+      Google Play, como cualquier app. Te avisaremos por correo, a través del grupo.</p>
+  </details>
 
   <footer>
     GoalUX ·
@@ -237,10 +284,17 @@
   var T = {
     es: {
       docTitle: 'Prueba GoalUX gratis',
-      pill: 'Acceso anticipado · gratis',
+      pill: 'Acceso anticipado · gratis · cierra pronto',
       title: 'Tus partidos de fútbol,<br>desde el reloj ⚽⌚',
       lead: 'Marcador, goles, cronómetro y estadísticas sin sacar el celular. GoalUX está en acceso anticipado: pruébala gratis antes del lanzamiento.',
       cta: 'Quiero probarla',
+      live: 'Inscripciones abiertas por poco tiempo',
+      closing: '<b>⏳ El acceso anticipado se cierra pronto</b><span>Cuando GoalUX salga para todos, se acaban las inscripciones. Los que entren ahora juegan primero y nos ayudan a darle forma.</span>',
+      shareText: '⚽ El fútbol se juega en equipo. Pásale el enlace a tu pichanga antes de que cierre.',
+      shareBtn: 'Compartir por WhatsApp',
+      shareMsg: '⚽⌚ GoalUX: tus partidos de fútbol desde el reloj. Acceso anticipado gratis, cierra pronto 👉 https://omarrhr.github.io/goalux-legal/probar.html',
+      q5: '¿Qué pasa cuando GoalUX salga para todos?',
+      a5: 'Sigues con la app instalada y te llegan las actualizaciones desde Google Play, como cualquier app. Te avisaremos por correo, a través del grupo.',
       cap1: 'Marcador y cronómetro', cap2: 'Historial', cap3: 'Detalle del partido',
       cap4: 'Línea de tiempo', cap5: 'Estadísticas',
       hint: 'Desliza para ver más →',
@@ -278,10 +332,17 @@
     },
     en: {
       docTitle: 'Try GoalUX for free',
-      pill: 'Early access · free',
+      pill: 'Early access · free · closing soon',
       title: 'Your football matches,<br>from your watch ⚽⌚',
       lead: 'Score, goals, match timer and stats without taking out your phone. GoalUX is in early access: try it for free before launch.',
       cta: 'I want to try it',
+      live: 'Sign-ups open for a short time',
+      closing: '<b>⏳ Early access closes soon</b><span>When GoalUX launches for everyone, sign-ups end. Those who join now play first and help us shape it.</span>',
+      shareText: '⚽ Football is a team game. Send the link to your squad before it closes.',
+      shareBtn: 'Share on WhatsApp',
+      shareMsg: '⚽⌚ GoalUX: your football matches from your watch. Free early access, closing soon 👉 https://omarrhr.github.io/goalux-legal/probar.html?lang=en',
+      q5: 'What happens when GoalUX launches for everyone?',
+      a5: 'You keep the app installed and get updates from Google Play like any other app. We\'ll let you know by email, through the group.',
       cap1: 'Scoreboard and timer', cap2: 'History', cap3: 'Match details',
       cap4: 'Timeline', cap5: 'Stats',
       hint: 'Swipe to see more →',
@@ -331,6 +392,7 @@
     document.querySelectorAll('.langs button').forEach(function (b) {
       b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
     });
+    document.getElementById('share').href = 'https://wa.me/?text=' + encodeURIComponent(t.shareMsg);
     try { localStorage.setItem('goalux-lang', lang); } catch (e) {}
   }
 
