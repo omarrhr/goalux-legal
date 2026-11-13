@@ -227,7 +227,7 @@
 
     <div class="share">
       <p data-i18n="shareText">⚽ El fútbol se juega en equipo. Pásale el enlace a tu pichanga antes de que cierre.</p>
-      <a class="wa" id="share" href="https://wa.me/?text=%E2%9A%BD%E2%8C%9A%20GoalUX%3A%20tus%20partidos%20de%20f%C3%BAtbol%20desde%20el%20reloj.%20Acceso%20anticipado%20gratis%2C%20cierra%20pronto%20%F0%9F%91%89%20https%3A%2F%2Fomarrhr.github.io%2Fgoalux-legal%2Fprobar.html" target="_blank" rel="noopener" data-i18n="shareBtn">Compartir por WhatsApp</a>
+      <a class="wa" id="share" href="https://api.whatsapp.com/send?text=GoalUX%3A%20tus%20partidos%20de%20f%C3%BAtbol%20desde%20el%20reloj.%20Acceso%20anticipado%20gratis%2C%20cierra%20pronto%3A%20https%3A%2F%2Fomarrhr.github.io%2Fgoalux-legal%2Fprobar.html" target="_blank" rel="noopener" data-i18n="shareBtn">Compartir por WhatsApp</a>
     </div>
   </div>
 
@@ -296,7 +296,7 @@
       closing: '<b>⏳ El acceso anticipado se cierra pronto</b><span>Cuando GoalUX salga para todos, se acaban las inscripciones. Los que entren ahora juegan primero y nos ayudan a darle forma.</span>',
       shareText: '⚽ El fútbol se juega en equipo. Pásale el enlace a tu pichanga antes de que cierre.',
       shareBtn: 'Compartir por WhatsApp',
-      shareMsg: '⚽⌚ GoalUX: tus partidos de fútbol desde el reloj. Acceso anticipado gratis, cierra pronto 👉 https://omarrhr.github.io/goalux-legal/probar.html',
+      shareMsg: 'GoalUX: tus partidos de fútbol desde el reloj. Acceso anticipado gratis, cierra pronto: https://omarrhr.github.io/goalux-legal/probar.html',
       q5: '¿Qué pasa cuando GoalUX salga para todos?',
       a5: 'Sigues con la app instalada y te llegan las actualizaciones desde Google Play, como cualquier app. Te avisaremos por correo, a través del grupo.',
       cap1: 'Marcador y cronómetro', cap2: 'Historial', cap3: 'Detalle del partido',
@@ -344,7 +344,7 @@
       closing: '<b>⏳ Early access closes soon</b><span>When GoalUX launches for everyone, sign-ups end. Those who join now play first and help us shape it.</span>',
       shareText: '⚽ Football is a team game. Send the link to your squad before it closes.',
       shareBtn: 'Share on WhatsApp',
-      shareMsg: '⚽⌚ GoalUX: your football matches from your watch. Free early access, closing soon 👉 https://omarrhr.github.io/goalux-legal/probar.html?lang=en',
+      shareMsg: 'GoalUX: your football matches from your watch. Free early access, closing soon: https://omarrhr.github.io/goalux-legal/probar.html?lang=en',
       q5: 'What happens when GoalUX launches for everyone?',
       a5: 'You keep the app installed and get updates from Google Play like any other app. We\'ll let you know by email, through the group.',
       cap1: 'Scoreboard and timer', cap2: 'History', cap3: 'Match details',
@@ -396,7 +396,7 @@
     document.querySelectorAll('.langs button').forEach(function (b) {
       b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
     });
-    document.getElementById('share').href = 'https://wa.me/?text=' + encodeURIComponent(t.shareMsg);
+    document.getElementById('share').href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(t.shareMsg);
     try { localStorage.setItem('goalux-lang', lang); } catch (e) {}
   }
 
